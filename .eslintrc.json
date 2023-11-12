@@ -1,5 +1,9 @@
 {
-    "extends": ["next/core-web-vitals", "rajeh"],
+    "extends": [
+        "next/core-web-vitals",
+        "@sanity/eslint-config-studio",
+        "rajeh"
+    ],
     "parserOptions": {
         "project": "./tsconfig.json",
         "ecmaVersion": "latest"
