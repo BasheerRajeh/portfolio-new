@@ -1,9 +1,9 @@
 import { Box, UserIcon } from 'lucide-react'
 import { defineArrayMember, defineField, defineType } from 'sanity'
 
-const user = defineType({
-    name: 'user',
-    title: 'User',
+const profile = defineType({
+    name: 'profile',
+    title: 'Profile',
     icon: UserIcon,
     type: 'document',
     fields: [
@@ -147,4 +147,4 @@ const user = defineType({
     },
 })
 
-export default user
+export default profile

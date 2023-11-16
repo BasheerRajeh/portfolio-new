@@ -1,6 +1,6 @@
 import experience from './experience'
 import post from './post'
+import profile from './profile'
 import project from './project'
-import user from './user'
 
-export const schemaTypes = [user, post, project, experience]
+export const schemaTypes = [profile, post, project, experience]
