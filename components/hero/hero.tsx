@@ -1,24 +1,16 @@
 /* eslint-disable security/detect-object-injection */
 
-import Icons from '../common/icon'
-import Image from '../common/image'
-import SociaIcon from '../common/social-icon'
+import Icons from '@/components/common/icon'
+import Image from '@/components/common/image'
+import SociaIcon from '@/components/common/social-icon'
+import { ProfileType } from '@/types'
 
 type HeroProps = {
-    fullName: string
-    headline: string
-    profileImage: { alt: string; image: string }
-    shortBio: string
-    socialLinks: Record<string, string>
+    profile: ProfileType
 }
 
-const Hero: React.FC<HeroProps> = ({
-    fullName,
-    headline,
-    profileImage,
-    shortBio,
-    socialLinks,
-}) => {
+const Hero: React.FC<HeroProps> = ({ profile }) => {
+    const { fullName, headline, profileImage, shortBio, socialLinks } = profile
     return (
         <section className='my-16 space-y-6'>
             <div className='flex justify-between'>
@@ -37,22 +29,20 @@ const Hero: React.FC<HeroProps> = ({
                             <div className='absolute inset-0 -z-10 bg-gradient-to-tl from-purple-700 to-orange-700 opacity-50 blur-2xl md:opacity-0' />
                         </div>
                         <div className='space-y-2'>
-                            <h1 className='text-2xl font-medium text-muted-foreground sm:text-3xl'>
+                            <h1 className='text-2xl font-bold sm:text-3xl lg:text-4xl'>
                                 {fullName}
                             </h1>
-                            <h2 className='align-middle text-sm leading-6 text-muted-foreground/80 sm:text-lg'>
+                            <h2 className='align-middle text-sm leading-6 text-muted-foreground sm:text-lg'>
                                 {headline}
                             </h2>
                         </div>
                     </div>
-                    <p className='mt-7 text-xl text-muted-foreground sm:mt-9'>
-                        {shortBio}
-                    </p>
-                    <div className='my-6 flex gap-8'>
+                    <p className='mt-7 text-xl sm:mt-9'>{shortBio}</p>
+                    <div className='group my-6  flex w-fit gap-8 hover:text-muted-foreground'>
                         {Object.keys(socialLinks).map((link: string) => (
                             <SociaIcon
                                 key={link}
-                                className='text-muted-foreground transition-all duration-500 ease-in-out hover:text-current'
+                                className='transition-all duration-500 ease-in-out hover:text-primary'
                                 socialLink={{
                                     id: link,
                                     href: socialLinks[link],

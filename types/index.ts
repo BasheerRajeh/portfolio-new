@@ -18,3 +18,14 @@ export type ProfileType = {
     socialLinks: Record<string, string>
     skills: string[]
 }
+
+export type ExperienceType = {
+    _id: string
+    name: string
+    jobTitle: string
+    logo: string
+    url: string
+    description: string
+    startDate: string
+    endDate: string
+}

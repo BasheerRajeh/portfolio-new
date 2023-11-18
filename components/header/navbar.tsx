@@ -18,7 +18,7 @@ const Navbar = () => {
                             className={cn(
                                 'select-none rounded px-3 py-2 text-sm font-medium no-underline transition-colors duration-150',
                                 {
-                                    ['text-muted-foreground hover:text-foreground']:
+                                    ['text-muted-foreground hover:text-primary/80']:
                                         link.href !== pathname,
                                 },
                                 {

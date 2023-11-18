@@ -20,3 +20,18 @@ export async function getProfile() {
         }`,
     )
 }
+
+export async function getExperiance() {
+    return client.fetch(
+        groq`*[_type == "experience"] | order(_createdAt desc){
+            _id,
+            name,
+            jobTitle,
+            "logo": logo.asset->url,
+            url,
+            description,
+            startDate,
+            endDate,
+        }`,
+    )
+}

@@ -1,21 +1,19 @@
+import Experiance from '@/components/experience'
 import Hero from '@/components/hero'
-import { getProfile } from '@/sanity/sanity.query'
-import { ProfileType } from '@/types'
+import { getExperiance, getProfile } from '@/sanity/sanity.query'
+import { ExperienceType, ProfileType } from '@/types'
 
 /**
  * Home Page
  */
 export default async function Home() {
     const [profile]: ProfileType[] = await getProfile()
+    const experiance: ExperienceType[] = await getExperiance()
+
     return (
         <>
-            <Hero
-                fullName={profile.fullName}
-                headline={profile.headline}
-                shortBio={profile.shortBio}
-                profileImage={profile.profileImage}
-                socialLinks={profile.socialLinks}
-            />
+            <Hero profile={profile} />
+            <Experiance jobs={experiance} />
         </>
     )
 }
