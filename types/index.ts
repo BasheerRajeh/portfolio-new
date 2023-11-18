@@ -15,6 +15,6 @@ export type ProfileType = {
     fullBio: PortableTextBlock[]
     location: string
     resumeURL: string
-    socialLinks: string[]
+    socialLinks: Record<string, string>
     skills: string[]
 }

@@ -44,3 +44,10 @@ export const HEADER_LINKS: HeaderLinks = [
         text: 'Blog',
     },
 ]
+
+export type SocialLink = {
+    id: string
+    label: string
+    icon: React.ReactNode
+    href: string
+}

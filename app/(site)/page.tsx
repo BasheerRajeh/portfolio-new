@@ -1,3 +1,4 @@
+import Hero from '@/components/hero'
 import { getProfile } from '@/sanity/sanity.query'
 import { ProfileType } from '@/types'
 
@@ -7,9 +8,14 @@ import { ProfileType } from '@/types'
 export default async function Home() {
     const [profile]: ProfileType[] = await getProfile()
     return (
-        <div>
-            <h1>Hello empty project</h1>
-            {profile && <h1 key={profile._id}>{profile.email}</h1>}
-        </div>
+        <>
+            <Hero
+                fullName={profile.fullName}
+                headline={profile.headline}
+                shortBio={profile.shortBio}
+                profileImage={profile.profileImage}
+                socialLinks={profile.socialLinks}
+            />
+        </>
     )
 }
