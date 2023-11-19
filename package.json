@@ -10,6 +10,7 @@
         "build": "next build",
         "dev": "next dev --turbo",
         "format": "prettier -w .",
+        "postinstall": "cd sanity-studio && npm install --legacy-peer-deps",
         "lint": "eslint .",
         "lint:fix": "eslint --fix .",
         "prepare": "husky install",
