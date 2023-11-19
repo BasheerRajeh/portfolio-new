@@ -11,10 +11,13 @@ type Site = {
 }
 
 export const site: Site = {
-    url: 'http://127.0.0.1:3000',
-    title: 'Next Project Template',
-    name: 'TNext',
-    keywords: ['template', 'next-template', 'full-stack next'],
+    url:
+        process.env.NODE_ENV === 'development'
+            ? 'http://127.0.0.1:3000'
+            : 'https://rajeh.vercel.app/',
+    title: 'Basheer Rajeh',
+    name: 'Rajeh',
+    keywords: ['basheer', 'basheer-rajeh', 'rajeh', 'portfolio-rajeh'],
     titleTemplate: '',
     description: '',
     favicons: [
