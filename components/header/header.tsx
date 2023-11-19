@@ -6,7 +6,6 @@ import Icons from '@/components/common/icon'
 import Link from '@/components/common/link'
 import { cn } from '@/lib/utils'
 
-import Navbar from './navbar'
 import ThemeSwitcher from './theme-switcher'
 
 type HeaderProps = React.HTMLAttributes<HTMLHeadElement>
@@ -42,7 +41,7 @@ const Header: React.FC<HeaderProps> = ({ className, ...rest }) => {
                 <Icons.logo className='h-6 w-6' />
             </Link>
             <div className='flex items-center gap-2'>
-                <Navbar />
+                {/* <Navbar /> */}
                 <ThemeSwitcher />
             </div>
         </header>
